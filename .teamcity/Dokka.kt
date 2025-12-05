@@ -1,5 +1,4 @@
 import dev.panuszewski.distributedkotest.teamcity.DistributedTests
-import jetbrains.buildServer.configs.kotlin.DslContext
 import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.ui.add
@@ -20,7 +19,7 @@ fun Project.dokka() {
     ) {
         name = "Dokka tests"
         id("dokka_tests")
-        vcs { root(DslContext.settingsRoot) }
+        vcs { root(dokkaVcsRoot) }
         triggers { vcs { } }
         requirements { add { matches("teamcity.agent.jvm.os.family", "Linux") } }
     }
