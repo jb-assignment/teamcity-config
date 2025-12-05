@@ -16,7 +16,8 @@ fun Project.exampleBuild() {
     val exampleBuildTests = DistributedTests(
         testTask = "test",
         numberOfBatches = 5,
-        debugMode = true
+        debugMode = true,
+        cacheGradleHome = false
     ) {
         name = "Example build tests"
         id("example_build_tests")
