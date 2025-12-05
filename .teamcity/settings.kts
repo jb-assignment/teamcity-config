@@ -11,4 +11,5 @@ project {
     }
     kotest()
     dokka()
+    exampleBuild()
 }
